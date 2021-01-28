@@ -34,9 +34,9 @@ This function should only modify configuration layer settings."
    dotspacemacs-configuration-layers
    '(
      ;; fonts
-     (unicode-fonts :variables
-                    unicode-fonts-enable-ligatures t
-                    )
+     ;;(unicode-fonts :variables
+     ;;               unicode-fonts-enable-ligatures t
+     ;;               )
 
      ;; languages
      lsp
