@@ -33,25 +33,20 @@ This function should only modify configuration layer settings."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     ;; ----------------------------------------------------------------
-     ;; Example of useful layers you may want to use right away.
-     ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
-     ;; `M-m f e R' (Emacs style) to install them.
-     ;; ----------------------------------------------------------------
-
      ;; fonts
      (unicode-fonts :variables
                     unicode-fonts-enable-ligatures t
                     )
 
      ;; languages
-     lua
+     lsp
+     cscope
      emacs-lisp
-     javascript
+     major-modes
      html
      java
+     javascript
      yaml
-     haskell
      (shell-scripts :variables
                     shell-enable-smart-eshell t
                     shell-scripts-backend 'lsp
@@ -62,36 +57,30 @@ This function should only modify configuration layer settings."
             c-c++-enable-clang-format-on-save t
             )
      (python :variables
-             python-backend 'anaconda
+             python-backend 'lsp
              python-enable-yapf-format-on-save t
              python-sort-imports-on-save t
              )
-     cscope
-     rust
-     lsp
-     major-modes
 
      ;; organisation
-     csv
-     yaml
+     git
      markdown
      version-control
-     git
+
+     ;; helpers
+     auto-completion
+     better-defaults
+     helm
+     spell-checking
+     syntax-checking
      (treemacs :variables
                treemacs-use-git-mode 'deferred
                treemacs-use-collapsed-directories 3
                )
-
-     ;; helpers
-     helm
-     auto-completion
-     better-defaults
-     spell-checking
-     syntax-checking
      (xclipboard :variables
                  xclipboard-copy-command "wl-copy"
-		             xclipboard-paste-command "wl-paste"
-		             )
+                 xclipboard-paste-command "wl-paste"
+                 )
      )
 
    ;; List of additional packages that will be installed without being
@@ -244,7 +233,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; Default font or prioritized list of fonts.
    dotspacemacs-default-font '("Fira Code"
-                               :size 40.0
+                               :size 50.0
                                :weight normal
                                :width normal)
 
